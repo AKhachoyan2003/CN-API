@@ -27,10 +27,10 @@ export const jokesReducer = (state = initialState, { type, id, payload }: { type
                 favorites: [...state.favorites.filter((joke, index) => index !== id)],
             }
         case ADD_TO_FAV:
-            localStorage.setItem("favorites", JSON.stringify([...state.favorites, ...state.jokes.filter((joke, index) => index === id)]));
+            localStorage.setItem("favorites", JSON.stringify([...state.favorites, ...state.jokes.filter((_, index) => index++ === id)]));
             return {
                 ...state,
-                favorites: [...state.favorites, ...state.jokes.filter((favJoke, index) => index++ === id)],
+                favorites: [...state.favorites, ...state.jokes.filter((_, index) => index++ === id)],
             }
         case REMOVE_ALL_JOKES:
             localStorage.setItem("jokes", JSON.stringify([]));

@@ -14,7 +14,6 @@ export const Main: FC<Props> = ({ state }) => {
 
     const getRandomJoke = (): void => {
         dispatch(getJoke());
-        localStorage.setItem('jokes', JSON.stringify(state?.jokesReducer.jokes));
     }
 
     const intervalJokes = (): void => {
@@ -36,15 +35,10 @@ export const Main: FC<Props> = ({ state }) => {
 
     const addToFavorites = (id: number): void => {
         dispatch({ type: ADD_TO_FAV, id });
-        // if(state?.jokesReducer.favorites && state?.jokesReducer.favorites.length > 10){
-        //     state?.jokesReducer.favorites.shift();
-        // }
-        localStorage.setItem('favorites', JSON.stringify(state?.jokesReducer.favorites));
     }
 
     const redirectToFavorites = (): void => {
         browserHistory.push('/favorites');
-        localStorage.getItem('favorites');
     }
 
     return (
