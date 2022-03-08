@@ -1,0 +1,33 @@
+.main {
+    width: 100%;
+    margin-top: 220px;
+}
+
+.container {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.main__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.jokes__wrapper {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px 0px;
+}
+
+.joke__div {
+    display: block;
+    width: 70%;
+    text-align: center;
+    border: 2px solid grey;
+    border-radius: 15px;
+}
